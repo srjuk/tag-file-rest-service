@@ -1,3 +1,4 @@
 language: erlang
+script: ./rebar3 compile && ./rebar3 skip_deps=true eunit
 otp_release:
    - 18.1
