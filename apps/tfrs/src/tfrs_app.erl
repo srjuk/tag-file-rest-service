@@ -11,6 +11,10 @@
 -export([start/2
         ,stop/1]).
 
+-ifdef(TEST).
+-include_lib("eunit/include/eunit.hrl").
+-endif.
+
 %%====================================================================
 %% API
 %%====================================================================
@@ -25,3 +29,11 @@ stop(_State) ->
 %%====================================================================
 %% Internal functions
 %%====================================================================
+
+-ifdef(TEST).
+
+simple_test() ->
+    ok = application:start(tfrs),
+    ?assertNot(undefined == whereis(tfrs_sup)).
+
+-endif.
