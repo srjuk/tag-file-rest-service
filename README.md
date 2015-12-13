@@ -1,1 +1,9 @@
-# tag-file-rest-service
+tfrs
+=====
+
+An OTP application
+
+Build
+-----
+
+    $ rebar3 compile
